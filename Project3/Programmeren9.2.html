@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programmeren 9 project AI in Games -  Bekijk codefragmenten en afbeeldingen.">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Programmeren 9 Project - Portfolio van Raymond Lam</title>
+</head>
+<body>
+    <div id="page" class="fade">
+        <header>
+            <h1>Raymond Lam Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../introductie.html">Introductie</a></li>
+                    <li><a href="../projecten.html">Projecten</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Programmeren 9.2</h2>
+                <p>Voor Programmeren 9 moesten we aan meerdere opdrachten werken.</p>
+
+                <section class="project-section">
+                    <h3>Opdracht 2: AI in Games</h3>
+                    <section class="image-carousel">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-content">
+                                <img class="carousel-image" src="../img/Screenshot 2025-06-12 185708.png" alt="AI in Games">
+                                <img class="carousel-image" src="../img/Screenshot 2025-06-12 185932.png" alt="AI in Games">
+                                <img class="carousel-image" src="../img/Screenshot 2025-06-12 185940.png" alt="AI in Games">
+                                <img class="carousel-image" src="../img/Screenshot 2025-06-12 190049.png" alt="AI in Games">>
+                            </div>
+                        </div>
+                    </section>
+
+                    <p>Voor de tweede opdracht moesten we werken aan een soort schaakspel waarbij de tegenstander (de paarden) bestuurd wordt door een game-AI. Het doel van de opdracht was om de AI slimmer te maken met behulp van het Minimax-algoritme, zodat de paarden kunnen voorspellen waar Gandalf (de speler) naartoe gaat, en daar strategisch op inspelen om hem te vangen. Hier zijn enkele afbeeldingen van het schaakspel en codefragmenten.</p>
+                </section>
+            </section>
+
+            <button id="back-button">Terug</button>
+
+            <section class="contact">
+                <p>Neem contact op via:</p>
+                <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
+                <br>
+                <a href="mailto:raymond_kin_long@hotmail.com">raymond_kin_long@hotmail.com</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Raymond Lam 2022 - 2024</p>
+        </footer>
+
+        <div id="modal">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="">
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const page = document.getElementById("page");
+            page.classList.add("fade-in");
+
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    page.classList.remove("fade-in");
+                    page.classList.add("fade");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // De tijd moet overeenkomen met de CSS-transitie
+                });
+            });
+
+            const backButton = document.getElementById("back-button");
+            backButton.addEventListener("click", function() {
+                page.classList.remove("fade-in");
+                page.classList.add("fade");
+
+                setTimeout(() => {
+                    window.history.back();
+                }, 500); // De tijd moet overeenkomen met de fade-out CSS-transitie
+            });
+        });
+    </script>
+</body>
+</html>

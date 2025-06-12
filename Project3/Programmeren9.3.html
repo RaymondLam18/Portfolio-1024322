@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Programmeren 9 projecten Unity Game Developement-  Bekijk codefragmenten en afbeeldingen.">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Programmeren 9 Project - Portfolio van Raymond Lam</title>
+</head>
+<body>
+    <div id="page" class="fade">
+        <header>
+            <h1>Raymond Lam Portfolio</h1>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../introductie.html">Introductie</a></li>
+                    <li><a href="../projecten.html">Projecten</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="card">
+                <h2>Programmeren 9.3</h2>
+                <p>Voor Programmeren 9 moesten we aan meerdere opdrachten werken.</p>
+
+                <section class="project-section">
+                    <h3>Opdracht 3: Unity Game Developement</h3>
+                    <section class="image-carousel">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-content">
+                                <img class="carousel-image" src="../img/Screenshot 2025-06-12 191520.png" alt="Unity Game Developement">
+                                <img class="carousel-image" src="../img/Screenshot 2025-06-12 191750.png" alt="Unity Game Developement">
+                                <img class="carousel-image" src="../img/Screenshot 2025-06-12 191755.png" alt="Unity Game Developement">
+                                <img class="carousel-image" src="../img/Screenshot 2025-06-12 191800.png" alt="Unity Game Developement">
+                                <img class="carousel-image" src="../img/Screenshot 2025-06-12 191807.png" alt="Unity Game Developement">
+                            </div>
+                        </div>
+                    </section>
+
+                    <p>Voor de derde opdracht moesten we een speelbaar voetbalspel maken in Unity. Het basisdoel was om een game te maken waarin twee spelers tegen elkaar kunnen voetballen. Daarnaast werd verwacht dat we zelf extra toevoegingen zouden doen om de game leuker of uitdagender te maken.</p>
+                    <p>Ik heb gekozen om de volgende uitbreidingen toe te voegen:</p>
+                    <p><em>AI-tegenstander:</em> In plaats van alleen multiplayer, heb ik een computertegenstander geprogrammeerd die de bal volgt en probeert te scoren. Hierdoor kan de game ook alleen gespeeld worden.</p>
+                    <p><em>Geluidseffecten:</em> Ik heb geluid toegevoegd doelpunten om het leuker te maken.</p>
+                    <p><em>Visuele effecten:</em> Bij botsingen en doelpunten verschijnen lichteffecten om het impactgevoel te vergroten en het spel visueel aantrekkelijker te maken. Hier zijn enkele afbeeldingen van mijn chatbot en codefragmenten.</p>
+                </section>
+            </section>
+
+            <button id="back-button">Terug</button>
+
+            <section class="contact">
+                <p>Neem contact op via:</p>
+                <a href="https://www.linkedin.com/in/raymond-lam-73ba8b2a0">LinkedIn</a>
+                <br>
+                <a href="mailto:raymond_kin_long@hotmail.com">raymond_kin_long@hotmail.com</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; Raymond Lam 2022 - 2024</p>
+        </footer>
+
+        <div id="modal">
+            <span class="close">&times;</span>
+            <img id="modal-img" src="" alt="">
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const page = document.getElementById("page");
+            page.classList.add("fade-in");
+
+            const links = document.querySelectorAll("nav a");
+            links.forEach(link => {
+                link.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    const href = this.getAttribute("href");
+                    page.classList.remove("fade-in");
+                    page.classList.add("fade");
+
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500); // De tijd moet overeenkomen met de CSS-transitie
+                });
+            });
+
+            const backButton = document.getElementById("back-button");
+            backButton.addEventListener("click", function() {
+                page.classList.remove("fade-in");
+                page.classList.add("fade");
+
+                setTimeout(() => {
+                    window.history.back();
+                }, 500); // De tijd moet overeenkomen met de fade-out CSS-transitie
+            });
+        });
+    </script>
+</body>
+</html>
